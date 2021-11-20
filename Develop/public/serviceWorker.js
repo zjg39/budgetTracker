@@ -1,5 +1,5 @@
-const CACHE_NAME = "static-cache-v2";
-const DATA_CACHE_NAME = "data-cache-v1";
+const CACHE_NAME = "budget-cache";
+const DATA_CACHE_NAME = "budget-data-cache";
 const CACHE_FILES = [
     "/",
     "/db.js",
@@ -12,14 +12,11 @@ const CACHE_FILES = [
     "/manifest.webmanifest"
   ];
   
-  const CACHE_NAME = "static-cache-v2";
-  const DATA_CACHE_NAME = "data-cache-v1";
-  
   //INSTALLATION
   self.addEventListener("install", (e) => {
     e.waitUntil(
       caches.open(CACHE_NAME).then(cache => {
-  
+          console.log('files cached')
         return cache.addAll(CACHE_FILES);
       })
     );
